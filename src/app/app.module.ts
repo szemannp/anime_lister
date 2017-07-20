@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListerComponent } from './lister/lister.component';
+import {HttpModule} from '@angular/http';
+import {SearchService} from './services/search.service';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,10 @@ import { ListerComponent } from './lister/lister.component';
     ListerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,8 @@
-<p>
-  lister works!
-</p>
+<div>
+  <button (click)="onClick()">Click Me!</button>
+  <div>
+    <p *ngFor="let result of this.searchResults">
+      {{ result.title_english }}
+    </p>
+  </div>
+</div>
