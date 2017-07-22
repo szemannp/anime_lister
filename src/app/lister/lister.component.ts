@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from '../services/search.service';
 
 @Component({
   selector: 'app-lister',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListerComponent implements OnInit {
 
-  constructor() { }
+  searchResults = [];
+
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    this.searchService.getSearchData('durara').map(x => x.json()).subscribe((y) => { this.searchResults = y });
+  }
 }
